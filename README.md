@@ -22,16 +22,16 @@
 
     | Student name  | Branch name |
     | ------------- |-------------|
-    | Amina Orynbayeva | `a-orynbayeva` |
-    | Moyinoluwa Tayo      | `m-tayo` |
-    | Bulut Ali Kadir      | `a-bulut-kadir` |
-    | Yurii Kravets | `y-kravets` |
-    | Rahman Mammadov | `r-mammadov` |
-    | Dorota Pietryka | `d-pietryka` |
-    | Mateusz Kowzan | `m-kowzan` |
-    | Maciej Cichosz | `m-cichosz` |
-    | Darya Akalovich | `d-akalovich` |
-    | Marianna Palka | `m-palka` |
+    | Amina O | `amina-o` |
+    | Moyinoluwa T | `moyinoluwa-t` |
+    | Ali B K| `ali-b-k` |
+    | Yurii K | `yurii-k` |
+    | Rahman M | `rahman-m` |
+    | Dorota P | `dorota-p` |
+    | Mateusz K | `mateusz-k` |
+    | Maciej C | `maciej-c` |
+    | Darya A | `darya-a` |
+    | Marianna P | `marianna-p` |
 ---
 
 ⚠️**ATTENTION**⚠️ 
