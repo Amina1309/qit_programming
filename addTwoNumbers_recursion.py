@@ -13,16 +13,22 @@ class Solution:
             x = x.next
             y = y.next
             if (x is None) and (y is not None):
-                x = ListNode(0, None)
-            elif (x is not None) and (y is None):
-                y = ListNode(0, None)
-            elif (x is None) and (y is None):
                 if c > 0:
                     x = ListNode(0, None)
+                else:
+
+                    return ListNode(z, y)
+
+            elif (x is not None) and (y is None):
+                if c > 0:
                     y = ListNode(0, None)
                 else:
 
-                    return ListNode(z, None)
+                    return ListNode(z, x)
+
+            elif (x is None) and (y is None):
+
+                return ListNode(z, ListNode(c, None)) if c > 0 else ListNode(z, None)
 
             return ListNode(z, addLists(x, y, c))
 
