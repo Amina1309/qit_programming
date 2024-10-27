@@ -5,24 +5,20 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        def listNodeToStr(list_node):
+        def listNodeToInt(ln):
             o = ""
-            x = list_node
+            x = ln
             while x is not None:
                 o += str(x.val)
                 x = x.next
 
-            return o
+            return int(o[::-1])
 
-        def strToReversedListNode(s):
+        def intToListNode(i):
             o = None
-            for x in s:
+            for x in str(i):
                 o = ListNode(int(x), o)
 
             return o
 
-        a = listNodeToStr(l1)
-        b = listNodeToStr(l2)
-        s = str(int(a[::-1]) + int(b[::-1]))
-
-        return strToReversedListNode(s)
+        return intToListNode(listNodeToInt(l1) + listNodeToInt(l2))
