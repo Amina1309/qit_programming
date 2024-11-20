@@ -18,7 +18,7 @@ user_input = input("Enter 4 digits in the format 'wxyz': ")
 # Extract the 4 digits from the input
 try:
     # Convert each character in the input to an integer and check validity
-    digits = [int(dino) for dino in user_input]
+    digits = [int(d) for d in user_input]
     if len(digits) == 4 and all(digit in digit_to_letters for digit in digits):
         # Get the corresponding lists of letters for each digit
         lists_of_letters = [digit_to_letters[digit] for digit in digits]
@@ -29,4 +29,4 @@ try:
     else:
         print("Invalid input. Please enter only 4 digits from 2 to 9.")
 except (IndexError, ValueError):
-    print("Kurwa! Please enter exactly 4 digits.")
+    print("No! Please enter exactly 4 digits.")
