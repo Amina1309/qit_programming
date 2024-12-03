@@ -9,82 +9,90 @@ def f(x,dy):
     #return numpy.float64(dy[1])**2-numpy.float64(dy[0])
 #dy[i] is the (i)th derivative. dy[0] is the value of y.
 
-print ("Do you want to load the input from a file in the program directory? (Y/N)")
-input_from_file=input()
+inputfromfilequestion=0
+while inputfromfilequestion==0:
+    print ("Do you want to load the input from a file in the program directory? (Y/N)")
+    input_from_file=input()
 
-if input_from_file=="Y":
-    f=open("input.txt", "r")
-    order = int(f.readline())
-    steps = int(f.readline())
-    h = float(f.readline())
-    x = [0] * (steps + 1)
-    x[0] = float(f.readline())
-    derivatives = numpy.zeros([order + 1, steps + 1])
-    for i in range(0, order):
-        if i > 3:
-            derivatives[i, 0] =float(f.readline())
-            print(derivatives[i, 0])
-        elif i == 0:
-            derivatives[i, 0] =float(f.readline())
-            print(derivatives[i, 0])
-        elif i == 1:
-            derivatives[i, 0] =float(f.readline())
-            print(derivatives[i, 0])
-        elif i == 2:
-            derivatives[i, 0] =float(f.readline())
-            print(derivatives[i, 0])
-        elif i == 3:
-            derivatives[i, 0] =float(f.readline())
-            print(derivatives[i, 0])
-    #f.close()
-else:
-    print ("Please enter the order of the equation.")
-    order=int(input())
-    #order=int(5)
+    if input_from_file=="Y" or input_from_file=="y":
+        inputfile=open("input.txt", "r")
+        order = int(inputfile.readline())
+        steps = int(inputfile.readline())
+        h = float(inputfile.readline())
+        x = [0] * (steps + 1)
+        x[0] = float(inputfile.readline())
+        derivatives = numpy.zeros([order + 1, steps + 1])
+        for i in range(0, order):
+            if i > 3:
+                derivatives[i, 0] =float(inputfile.readline())
+                #print(derivatives[i, 0])
+            elif i == 0:
+                derivatives[i, 0] =float(inputfile.readline())
+                #print(derivatives[i, 0])
+            elif i == 1:
+                derivatives[i, 0] =float(inputfile.readline())
+                #print(derivatives[i, 0])
+            elif i == 2:
+                derivatives[i, 0] =float(inputfile.readline())
+                #print(derivatives[i, 0])
+            elif i == 3:
+                derivatives[i, 0] =float(inputfile.readline())
+                #print(derivatives[i, 0])
+        inputfile.close()
+        inputfromfilequestion = 1
+    elif input_from_file=="N" or input_from_file=="n":
+        print ("Please enter the order of the equation.")
+        order=int(input())
+        #order=int(5)
 
-    print ("Please enter the number of steps the program has to calculate.")
-    print ("WARNING: The program may crash for too many steps if the solution diverges to infinity.")
-    steps=int(input())
+        print ("Please enter the number of steps the program has to calculate.")
+        print ("WARNING: The program may crash for too many steps if the solution diverges to infinity.")
+        steps=int(input())
 
-    print ("Please enter the step between x values.")
-    h=float(input())
+        print ("Please enter the step between x values.")
+        h=float(input())
 
-    #The program uses initial conditions for the same x for all derivatives of the function y.
-    x=[0]*(steps+1)
-    print ("Please enter the initial value of the variable x.")
-    x[0]=float(input())
+        #The program uses initial conditions for the same x for all derivatives of the function y.
+        x=[0]*(steps+1)
+        print ("Please enter the initial value of the variable x.")
+        x[0]=float(input())
 
-    #y=[0]*(steps+1)
-    #print ("Please enter the initial value of the function y.")
-    #y[0]=int(input())
+        #y=[0]*(steps+1)
+        #print ("Please enter the initial value of the function y.")
+        #y[0]=int(input())
 
-    #derivatives=[[0]*order+1]*(steps+1)
-    derivatives=numpy.zeros([order+1, steps+1])
+        #derivatives=[[0]*order+1]*(steps+1)
+        derivatives=numpy.zeros([order+1, steps+1])
 
-    for i in range (0, order):
-        if i>3:
-            print("Please enter the initial value of", i, "-th derivative.")
-            derivatives[i,0]=float(input())
-        elif i==0:
-            print ("Please enter the initial value of the function y.")
-            derivatives[i,0]=float(input())
-        elif i==1:
-            print("Please enter the initial value of first derivative.")
-            derivatives[i,0]=float(input())
-        elif i==2:
-            print("Please enter the initial value of second derivative.")
-            derivatives[i,0]=float(input())
-        elif i==3:
-            print("Please enter the initial value of third derivative.")
-            derivatives[i,0]=float(input())
+        for i in range (0, order):
+            if i>3:
+                print("Please enter the initial value of", i, "-th derivative.")
+                derivatives[i,0]=float(input())
+            elif i==0:
+                print ("Please enter the initial value of the function y.")
+                derivatives[i,0]=float(input())
+            elif i==1:
+                print("Please enter the initial value of first derivative.")
+                derivatives[i,0]=float(input())
+            elif i==2:
+                print("Please enter the initial value of second derivative.")
+                derivatives[i,0]=float(input())
+            elif i==3:
+                print("Please enter the initial value of third derivative.")
+                derivatives[i,0]=float(input())
+        inputfromfilequestion = 1
+    else:
+        print("Invalid input. Please use Y or N.")
+
+
 
 f0=[0]*(order+1)
 f1=[0]*(order+1)
 f2=[0]*(order+1)
 f3=[0]*(order+1)
 fh=[0]*(order+1)
-for i in range (0,10):
-    print (type(derivatives[:,0]))
+#for i in range (0,10):
+    #print (type(derivatives[:,0]))
 
 
 derivatives[order][0]=0
